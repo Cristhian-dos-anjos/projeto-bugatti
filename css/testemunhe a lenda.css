@@ -1,0 +1,277 @@
+@keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glowText {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(0, 76, 250, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(0, 76, 250, 0.6);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: var(--white);
+            }
+            100% {
+                color: var(--bugatti-blue);
+            }
+        }
+
+        :root {
+            --bugatti-blue: #004CFA;
+            --deep-black: #050505;
+            --dark-gray: #111111;
+            --text-gray: #a1a1a1;
+            --white: #ffffff;
+        }
+
+        body {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('/img/fundo\ testemunhe\ a\ lenda.jfif');
+            color: var(--white);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            background-size: cover;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        header {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), var(--deep-black)), 
+                        url('/img/fundo2\ testemunhe\ a\ lenda.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            border-radius: 15px;
+        }
+
+        h1 { 
+            font-size: 3rem; 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            animation: glowText 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(0, 76, 250, 0.8);
+        }
+
+        h2 { 
+            color: var(--bugatti-blue); 
+            margin-top: 40px; 
+            padding-bottom: 10px; 
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s ease-out;
+            text-align: center;
+        }
+
+        h2:hover {
+            color: var(--white);
+            text-shadow: 0 0 20px rgba(0, 76, 250, 0.5);
+            transition: color 0.4s ease-in-out;
+        }
+
+        .creator-box {
+            background: blur;
+            padding: 30px;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(5, 5, 5, 0.3);
+            animation: fadeInUp 0.6s ease-out 0s;
+            color: var(--white);
+        }
+
+        .creator-box:hover {
+            transform: translateX(10px);
+            transform: translateY(10px);
+            box-shadow: 0 8px 32px rgba(0, 76, 250, 0.3);
+            animation: colorChange 0.5s ease-in-out forwards;
+        }
+
+        .edition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 10fr));
+            gap: 30px;
+            margin-top: 70px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .edition-card {
+            background: var(--dark-gray);
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 76, 250, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .edition-card:nth-child(1) { animation-delay: 0.1s; }
+        .edition-card:nth-child(2) { animation-delay: 0.2s; }
+        .edition-card:nth-child(3) { animation-delay: 0.3s; }
+        .edition-card:nth-child(4) { animation-delay: 0.4s; }
+        .edition-card:nth-child(5) { animation-delay: 0.5s; }
+        .edition-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .edition-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 76, 250, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .edition-card:hover {
+            border: 1px solid var(--bugatti-blue);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(0, 76, 250, 0.3);
+        }
+
+        .edition-card:hover::before {
+            left: 100%;
+        }
+
+        .edition-card h3 {
+            color: var(--bugatti-blue);
+            transition: all 0.3s ease;
+        }
+
+        .edition-card:hover h3 {
+            color: var(--white);
+            text-shadow: 0 0 20px rgba(0, 76, 250, 0.6);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 35px;
+            border: 2px solid var(--white);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 50px;
+            animation: fadeInUp 0.6s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--bugatti-blue);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .back-btn:hover {
+            background: var(--white);
+            color: var(--deep-black);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 76, 250, 0.5);
+        }
+
+        .back-btn:hover::before {
+            left: 0;
+        }
+
+        .theme-box {
+            background: blur;
+            padding: 40px 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .theme-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(0, 76, 250, 0.2);
+            background: blur;
+        }
+
+        .theme-box p {
+            transition: color 0.3s ease;
+        }
+
+        .theme-box:hover p {
+            color: var(--bugatti-blue);
+        }
+
+        .theme-box ul {
+            transition: all 0.3s ease;
+        }
+
+        .theme-box li {
+            transition: all 0.3s ease;
+            margin: 15px 0;
+        }
+
+        .theme-box li:hover {
+            transform: translateX(10px);
+            color: var(--bugatti-blue);
+            text-shadow: 0 0 10px rgba(0, 76, 250, 0.3);
+        }
