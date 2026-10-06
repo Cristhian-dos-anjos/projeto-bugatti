@@ -60,7 +60,7 @@
         body {
             background-image:
                 linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                url('/img/fundo\ testemunhe\ a\ lenda.jfif');
+                url('../img/fundo testemunhe a lenda.jfif');
             color: var(--white);
             font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
@@ -72,7 +72,7 @@
         header {
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.7), var(--deep-black)), 
-                        url('/img/fundo2\ testemunhe\ a\ lenda.jpg');
+                        url('../img/fundo2 testemunhe a lenda.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -119,9 +119,11 @@
         }
 
         .creator-box {
-            background: blur;
+            background: rgba(8, 8, 8, 0.72);
             padding: 30px;
             margin: 30px 0;
+            border: 1px solid rgba(0, 76, 250, 0.2);
+            border-radius: 15px;
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
             box-shadow: 0 8px 32px rgba(5, 5, 5, 0.3);
@@ -130,10 +132,8 @@
         }
 
         .creator-box:hover {
-            transform: translateX(10px);
-            transform: translateY(10px);
+            transform: translateY(-5px);
             box-shadow: 0 8px 32px rgba(0, 76, 250, 0.3);
-            animation: colorChange 0.5s ease-in-out forwards;
         }
 
         .edition-grid {
@@ -237,9 +237,10 @@
         }
 
         .theme-box {
-            background: blur;
+            background: rgba(8, 8, 8, 0.72);
             padding: 40px 30px;
             margin: 30px 0;
+            border: 1px solid rgba(0, 76, 250, 0.2);
             border-radius: 15px;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             backdrop-filter: blur(5px);
@@ -250,7 +251,7 @@
         .theme-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 48px rgba(0, 76, 250, 0.2);
-            background: blur;
+            background: rgba(8, 8, 8, 0.82);
         }
 
         .theme-box p {
@@ -258,7 +259,28 @@
         }
 
         .theme-box:hover p {
-            color: var(--bugatti-blue);
+            color: var(--white);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                min-height: 380px;
+                height: 60vh;
+            }
+
+            h1 {
+                font-size: clamp(1.8rem, 8vw, 3rem);
+                letter-spacing: clamp(2px, 1vw, 5px);
+            }
+
+            .container {
+                padding: 24px 16px;
+            }
+
+            .theme-box,
+            .creator-box {
+                padding: 28px 20px;
+            }
         }
 
         .theme-box ul {

@@ -122,6 +122,8 @@ nav {
     font-size: 2rem;
     letter-spacing: 8px;
     border-bottom: 2px solid var(--bugatti);
+    color: var(--text-light);
+    text-decoration: none;
     align-items: center;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -244,6 +246,11 @@ nav ul li a:hover::after {
     gap: 50px;
     align-items: center;
     animation: zoomIn 1.2s ease-out;
+}
+
+.services-section .container,
+.gallery-section .container {
+    display: block;
 }
 
 .text-box h2 {
@@ -629,7 +636,7 @@ footer {
 
 /* Loading animation */
 body {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease;
 }
 

@@ -50,7 +50,7 @@
         body {
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
-                url('/img/fundo\ modelos.jfif');
+                url('../img/fundo modelos.jfif');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -240,6 +240,7 @@
         }
 
         @media (max-width: 768px) {
+            .back-nav { padding: 20px; }
             .model-card { flex-direction: column; }
             .specs-list { grid-template-columns: 1fr; }
         }

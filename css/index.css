@@ -20,7 +20,7 @@
         body {
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('/img/Chiron 1.jpg');
+                url('../img/fundo modelos.jfif');
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
@@ -56,6 +56,10 @@
             animation: navSlideUp 0.5s ease-in forwards;
         }
 
+        nav.scrolled {
+            padding: 15px 50px;
+        }
+
         /* Logo */
         .logo {
             font-weight: 700;
@@ -63,6 +67,8 @@
             letter-spacing: 5px;
             display: flex;
             align-items: center;
+            color: var(--white);
+            text-decoration: none;
             animation: float 3s ease-in-out infinite, fadeIn 1s ease-out 0.7s both, pulse 3s ease-in-out infinite 2s, zoom 4s ease-in-out infinite 3s, glow 3s ease-in-out infinite 5s;
             transition: transform 0.3s ease;
         }
@@ -158,17 +164,22 @@
 
         .hero img {
             height: auto;
-            width: 900px;
+            width: min(900px, 90vw);
+            max-width: 100%;
             margin-top: 50px;
             animation: fadeIn 1s ease-out 0.7s both, float 5s ease-in-out infinite 1s, pulse 3s ease-in-out infinite 2s, zoom 4s ease-in-out infinite 3s, glow 3s ease-in-out infinite 5s;
             image-resolution: 2560x1440;
         }
 
         .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 18px 45px;
             border: 1px solid var(--white);
             background: transparent;
             color: var(--white);
+            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 12px;
@@ -254,7 +265,7 @@
         /* Font Faces */
         @font-face {
             font-family: 'minha-fonte';
-            src: url('fonte/darlington demo.otf') format("opentype");
+            src: url('../fonte/cahjilla.otf') format("opentype");
             font-display: swap;
         }
 
@@ -362,6 +373,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
+            nav.scrolled { padding: 12px 20px; }
             .menu { display: none; }
             .specs { gap: 40px; padding: 80px 20px; }
         }
